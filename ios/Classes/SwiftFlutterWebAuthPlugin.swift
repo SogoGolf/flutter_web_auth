@@ -43,6 +43,7 @@ public class SwiftFlutterWebAuthPlugin: NSObject, FlutterPlugin {
 
             if #available(iOS 12, *) {
                 let session = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackURLScheme, completionHandler: completionHandler)
+                session.prefersEphemeralWebBrowserSession = true
 
                 if #available(iOS 13, *) {
                     guard let provider = UIApplication.shared.delegate?.window??.rootViewController as? FlutterViewController else {
