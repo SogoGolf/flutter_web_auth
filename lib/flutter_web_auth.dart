@@ -35,6 +35,7 @@ class FlutterWebAuth {
     return await _channel.invokeMethod('authenticate', <String, dynamic>{
       'url': url,
       'callbackUrlScheme': callbackUrlScheme,
+      'saveHistory': saveHistory,
     }) as String;
   }
 
